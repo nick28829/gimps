@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gimps 4</title>
+    <meta name="description" content="A cozy little life-sim that runs in your browser." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="topbar">
+      <div class="brand">Gimps<span>4</span></div>
+      <div id="clock" class="pill">—</div>
+      <div id="speed" class="btn-group" role="group" aria-label="Game speed"></div>
+      <div id="money" class="pill money">🪙 0</div>
+      <div class="spacer"></div>
+      <div id="modes" class="btn-group" role="group" aria-label="Mode">
+        <button data-mode="live" class="active" title="Live mode (L)">🏠 Live</button>
+        <button data-mode="buy" title="Buy mode (B)">🛒 Buy</button>
+      </div>
+      <div class="btn-group">
+        <button id="btn-save" title="Save game">💾 Save</button>
+        <button id="btn-new" title="Start over">✨ New</button>
+        <button id="btn-help" title="How to play">❔</button>
+      </div>
+    </header>
+
+    <main>
+      <div id="stage">
+        <canvas id="game"></canvas>
+        <div id="toasts" aria-live="polite"></div>
+      </div>
+
+      <aside id="panel">
+        <section id="live-panel">
+          <div class="gimp-card">
+            <canvas id="portrait" width="128" height="128"></canvas>
+            <div>
+              <h2 id="gimp-name">—</h2>
+              <div id="gimp-mood" class="mood"></div>
+            </div>
+          </div>
+
+          <h3>Needs</h3>
+          <div id="needs" class="needs"></div>
+
+          <h3>Doing</h3>
+          <ol id="queue" class="queue"></ol>
+
+          <h3>Feelings</h3>
+          <ul id="moodlets" class="moodlets"></ul>
+
+          <h3>Skills</h3>
+          <div id="skills" class="skills"></div>
+
+          <label class="toggle"><input type="checkbox" id="freewill" checked /> Free will</label>
+        </section>
+
+        <section id="buy-panel" hidden>
+          <div class="buy-tools">
+            <button id="sell-tool" class="tool">🏷️ Sell tool</button>
+            <span class="hint">Right-click / Esc to drop the item</span>
+          </div>
+          <div id="catalog"></div>
+        </section>
+      </aside>
+    </main>
+
+    <div id="modal" class="modal" hidden></div>
+
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>

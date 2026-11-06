@@ -1,0 +1,14 @@
+{
+  "name": "gimps-4",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A cozy little life-sim that runs in your browser.",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
